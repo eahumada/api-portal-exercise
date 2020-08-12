@@ -1,0 +1,30 @@
+{
+    "variables": {
+        "client_id": "{{env `TF_VAR_arm_client_id`}}",
+        "client_secret": "{{env `TF_VAR_arm_client_secret`}}",
+        "subscription_id": "{{env `TF_VAR_arm_subscription_id`}}"
+    },
+    "builders": [
+        {
+            "type": "azure-arm",
+            "client_id": "{{user `client_id`}}",
+            "client_secret": "{{user `client_secret`}}",
+            "subscription_id": "{{user `subscription_id`}}",
+            "os_type": "Linux",
+            "image_publisher": "Canonical",
+            "image_offer": "UbuntuServer",
+            "image_sku": "18.04-LTS",
+            "managed_image_resource_group_name": "api-portal-images",
+            "managed_image_name": "us1804-db-image",
+            "location": "East US",
+            "vm_size": "Standard_B1s"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "chef-solo",
+            "cookbook_paths": ["cookbooks"],
+            "run_list": ["apt", "postgresql"]
+        }
+    ]
+}
