@@ -1,0 +1,16 @@
+{
+    "db": {
+        "host": "20.0.0.11",
+        "port": 5432,
+        "user": "postgres",
+        "pwd": "payments",
+        "name": "postgres",
+        "schema": "people_portal",
+        "dialect": "postgres",
+        "sql_out_log": false,
+        "pool": {
+            "min": 1,
+            "max": 2
+        }
+    }
+}

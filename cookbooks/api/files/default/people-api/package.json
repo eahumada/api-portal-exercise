@@ -1,0 +1,17 @@
+{
+  "name": "people-api",
+  "version": "1.0.0",
+  "description": "REST APIs to manage people list.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ruben Cavieres",
+  "license": "ISC",
+  "dependencies": {
+    "@natlibfi/express-validate-content-type": "^1.0.1",
+    "express": "^4.17.1",
+    "pg": "^8.3.0",
+    "sequelize": "^6.3.4"
+  }
+}
